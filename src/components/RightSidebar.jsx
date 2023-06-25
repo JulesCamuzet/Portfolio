@@ -1,18 +1,20 @@
 import { styled } from "styled-components"
 import ActiveQuests from "./ActiveQuests";
 
-const RightSidebar = () => {
-    const RightSidebar = styled.div`
+const _RightSidebar = styled.div`
         width: 15%;
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: end;
     `
+
+const RightSidebar = () => {
+    
     return (
-        <RightSidebar>
+        <_RightSidebar>
             <ActiveQuests />
-        </RightSidebar>
+        </_RightSidebar>
     )
 }
 

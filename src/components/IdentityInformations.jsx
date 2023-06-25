@@ -1,22 +1,6 @@
 import { styled } from "styled-components";
 
-const IdentityInformations = () => {
-  const Informations = [
-    {
-      label: "NAME",
-      value: "JULES",
-    },
-    {
-      label: "OCCUPATION",
-      value: "FRONTEND DEVELOPER",
-    },
-    {
-      label: "AGE",
-      value: "20 YEARS OLD",
-    },
-  ];
-
-  const IdentityInformations = styled.div`
+const _IdentityInformations = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -40,17 +24,33 @@ const IdentityInformations = () => {
     flex-direction: column;
   `;
 
+const IdentityInformations = () => {
+  const Informations = [
+    {
+      label: "NAME",
+      value: "JULES",
+    },
+    {
+      label: "OCCUPATION",
+      value: "FRONTEND DEVELOPER",
+    },
+    {
+      label: "AGE",
+      value: "20 YEARS OLD",
+    },
+  ];
+
   return (
-    <IdentityInformations>
+    <_IdentityInformations>
       {Informations.map((info, index) => {
         return (
-          <Info>
+          <Info key={index}>
             <InformationLabel>{info.label}</InformationLabel>
             <InformationValue>{info.value}</InformationValue>
           </Info>
         );
       })}
-    </IdentityInformations>
+    </_IdentityInformations>
   );
 };
 

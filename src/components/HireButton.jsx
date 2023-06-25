@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
-const HireButton = () => {
-  const HireButton = styled.button`
+const _HireButton = styled.button`
     background-color: #e84a4a;
     width: 200px;
     height: 50px;
@@ -22,7 +21,9 @@ const HireButton = () => {
     }
   `;
 
-  return <HireButton>OPEN FOR HIRE</HireButton>;
+const HireButton = () => {
+
+  return <_HireButton>OPEN FOR HIRE</_HireButton>;
 };
 
 export default HireButton;

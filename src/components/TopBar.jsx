@@ -1,8 +1,7 @@
 import { styled } from "styled-components"
 import TopbarStats from "./TopbarStats";
 
-const TopBar = () => {
-    const TopBar = styled.div`
+const _TopBar = styled.div`
         width: 100%;
         height: 10vh;
         display: flex;
@@ -10,10 +9,12 @@ const TopBar = () => {
         align-items: center;
     `
 
+const TopBar = () => {
+
     return (
-        <TopBar>
+        <_TopBar>
             <TopbarStats />
-        </TopBar>
+        </_TopBar>
     )
 }
 

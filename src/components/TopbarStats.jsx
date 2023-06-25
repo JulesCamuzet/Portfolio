@@ -1,18 +1,6 @@
 import { styled } from "styled-components";
 
-const TopbarStats = () => {
-  const stats = [
-    {
-      value: 42,
-      label: "LEVEL",
-    },
-    {
-      value: 1234,
-      label: "COINS",
-    },
-  ];
-
-  const TopbarStats = styled.div`
+const _TopbarStats = styled.div`
     display: flex;
     align-items: end;
     gap: 50px;
@@ -31,17 +19,29 @@ const TopbarStats = () => {
     font-size: 25px;
   `;
 
+const TopbarStats = () => {
+  const stats = [
+    {
+      value: 42,
+      label: "LEVEL",
+    },
+    {
+      value: 1234,
+      label: "COINS",
+    },
+  ];
+
   return (
-    <TopbarStats>
+    <_TopbarStats>
       {stats.map((stat, index) => {
         return (
-          <span>
+          <span key={index}>
             <Value>{stat.value}</Value>
             <Label>{stat.label}</Label>
           </span>
         );
       })}
-    </TopbarStats>
+    </_TopbarStats>
   );
 };
 
