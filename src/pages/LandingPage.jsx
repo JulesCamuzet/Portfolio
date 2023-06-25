@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import EnterButton from "../components/EnterButton";
+import GlitchedGiantTitle from "../components/GlitchedLandingTitle";
 
 const _LandingPage = styled.div`
   width: 100%;
@@ -9,15 +10,6 @@ const _LandingPage = styled.div`
   justify-content: center;
   background-color: black;
   gap: 100px;
-`;
-
-const GiantTitle = styled.h1`
-  color: #e84a4a;
-  font-family: Big-Shoulders-Display;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 30vw;
-  letter-spacing: -1.5vw;
 `;
 
 const RightContent = styled.div`
@@ -45,7 +37,7 @@ const RightText = styled.p`
 const LandingPage = () => {
   return (
     <_LandingPage>
-      <GiantTitle>hi!</GiantTitle>
+      <GlitchedGiantTitle />
       <RightContent>
         <RightTitle>WELCOME TO MY PORTFOLIO</RightTitle>
         <RightText>
