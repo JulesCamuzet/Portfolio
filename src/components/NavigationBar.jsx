@@ -9,6 +9,7 @@ const _NavigationBar = styled.div`
   left: 50%;
   bottom: 0;
   transform: translate(-50%, 50px);
+  z-index: 500;
 `;
 
 const NavigationBar = (props) => {
