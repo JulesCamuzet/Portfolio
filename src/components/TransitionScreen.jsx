@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const _TransitionScreeen = styled.div`
   width: 100%;
@@ -15,8 +15,8 @@ const _TransitionScreeen = styled.div`
 const Square = styled.div`
   box-sizing: border-box;
   background-color: #e84a4a;
-    transition: .5s;
-  transition-delay: ${props => `${props.timing}s`};
+  transition: 0.5s;
+  transition-delay: ${(props) => `${props.timing}s`};
   opacity: ${(props) => (props.visible === "true" ? "1" : "0")};
 `;
 
@@ -33,23 +33,24 @@ const TestButton = styled.div`
   }
 `;
 
-const TransitionScreen = () => {
+const TransitionScreen = (props) => {
+  const transition = props.transition;
+
+  useEffect(() => {
+    setVisible("true");
+    setTimeout(() => {
+      setVisible("false");
+    }, 1200);
+  }, [transition]);
+
   const [visible, setVisible] = useState("false");
   const squareArray = [];
   for (let i = 0; i < 10; i++) {
     squareArray.push(<Square timing={`${i * 0.05}`} visible={visible} />);
   }
 
-  const testFunction = () => {
-    setVisible("true");
-    setTimeout(() => {
-        setVisible("false");
-    }, 1200);
-  }
-
   return (
     <_TransitionScreeen>
-      <TestButton onClick={testFunction}>Test</TestButton>
       {squareArray}
     </_TransitionScreeen>
   );

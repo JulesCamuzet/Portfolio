@@ -30,6 +30,8 @@ const NavigationBar = (props) => {
 
   const activeSection = props.activeSection;
   const setActiveSection = props.setActiveSection;
+  const transition = props.transition;
+  const setTransition = props.setTransition;
 
   return (
     <_NavigationBar>
@@ -42,6 +44,8 @@ const NavigationBar = (props) => {
             description={button.description}
             activeSection={activeSection}
             setActiveSection={setActiveSection}
+            transition={transition}
+            setTransition={setTransition}
           />
         );
       })}

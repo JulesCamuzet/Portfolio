@@ -12,11 +12,12 @@ const _NavigationScreen = styled.div`
 
 const NavigationScreen = () => {
   const [activeSection, setActiveSection] = useState(0);
+  const [transition, setTransition] = useState(false);
 
   return (
     <_NavigationScreen>
-      <NavigationContent activeSection={activeSection} />
-      <NavigationBar  activeSection={activeSection} setActiveSection={setActiveSection} />
+      <NavigationContent activeSection={activeSection} transition={transition} />
+      <NavigationBar  activeSection={activeSection} setActiveSection={setActiveSection} setTransition={setTransition} transition={transition} />
     </_NavigationScreen>
   );
 };

@@ -3,7 +3,8 @@ import { styled } from "styled-components";
 const _NavigationButton = styled.div`
   display: flex;
   flex-direction: column;
-  border-left: solid ${props => props.active === "true" ? "#e84a4a" : "#363636"} 3px;
+  border-left: solid
+    ${(props) => (props.active === "true" ? "#e84a4a" : "#363636")} 3px;
   width: 200px;
   cursor: pointer;
 `;
@@ -13,8 +14,9 @@ const Title = styled.h2`
   font-size: 30px;
   color: lightgray;
   width: 100%;
-  opacity: .9;
-  background-color: ${props => props.active === "true" ? "#e84a4a" : "#363636"};
+  opacity: 0.9;
+  background-color: ${(props) =>
+    props.active === "true" ? "#e84a4a" : "#363636"};
 `;
 
 const Description = styled.p`
@@ -33,9 +35,14 @@ const NavigationButton = (props) => {
   const rank = props.rank;
   const activeSection = props.activeSection;
   const setActiveSection = props.setActiveSection;
+  const transition = props.transition;
+  const setTransition = props.setTransition;
 
   const handleClick = () => {
-    setActiveSection(rank);
+    if (!(activeSection === rank)) {
+      setTransition(!transition);
+      setActiveSection(rank);
+    }
   };
 
   const active = activeSection === rank;
